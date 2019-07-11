@@ -4,9 +4,9 @@ from datetime import date
 
 URL = "https://www.imensa.de/freiburg/mensa-flugplatz/{}.html"
 
-
-print("-" * 50)
-for i in range(6):
+print("\n" + "-" * 50)
+print("Speiseplan für Mensa Flugplatz:\n")
+for i in range(3):
     day = ["montag", "dienstag", "mittwoch", "donnerstag", "freitag", "samstag", "sonntag"][(date.today().weekday() + i) % 7]
     r = requests.get(URL.format(day))
     soup = bs(r.content, 'html.parser')
@@ -17,4 +17,4 @@ for i in range(6):
         if (meal.text != "Heute keine Essensausgabe"): print("  Essen " + str(j + 1) + ":")
         print("    " + meal.get_text(separator="\n    "))
 
-print("-" * 50)
+print("-" * 50, "\n", sep="")
