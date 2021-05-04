@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup as bs
 from datetime import date
 
-URL = "ttps://www.imensa.de/freiburg/mensa-rempartstrasse/{}.html"
+URL = "https://www.imensa.de/freiburg/mensa-rempartstrasse/{}.html"
 
 def printMeals(days):
     print("\n" + "-" * 50)
